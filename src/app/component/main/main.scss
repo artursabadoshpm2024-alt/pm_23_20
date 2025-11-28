@@ -1,0 +1,273 @@
+.pad{
+  padding-left: 110px;
+  padding-right: 110px;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  font-family: Arial, sans-serif;
+  margin-bottom: 30px;
+}
+
+.timeline-item-2 {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  font-family: Arial, sans-serif;
+  margin-bottom: 30px;
+  margin-top: -60px;
+}
+
+.left-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.circle-3 {
+  width: 12px;
+  height: 12px;
+  border: 2px solid #ce4ff2;
+  border-radius: 50%;
+  margin-top: 7px;
+}
+
+.line {
+  width: 1px;
+  height: 100px;
+  background: #54548a;
+  margin-top: 10px;
+}
+
+.line-2 {
+  width: 1px;
+  height: 88px;
+  background: #54548a;
+  margin-top: 10px;
+}
+
+.content {
+  flex: 1;
+}
+
+.top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.position {
+  font-size: 22px;
+  text-transform: uppercase;
+  color: #ce4ff2;
+  font-weight: 700;
+}
+
+.date {
+  font-weight: 600;
+  color: #C64BFF;
+  padding-left: 135px;
+}
+
+.date-2 {
+  font-weight: 600;
+  color: #C64BFF;
+  padding-left: 170px;
+}
+
+.company {
+  color: #444;
+  font-weight: 600;
+  margin-top: -10px;
+  font-size: 15px;
+}
+
+p {
+  width: 874px;
+  height: 92px;
+  font-size: 18px;
+  line-height: 20px;
+  color: #444444;
+  font-weight: 400;
+  margin-top: 15px;
+}
+
+.skill-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 70%;
+  margin-top: 30px;
+}
+
+.left-3 {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border: 2px solid #333;
+  border-radius: 50%;
+}
+
+.skill-name {
+  width: 180px;
+  font-size: 16px;
+}
+
+.slider {
+  margin-top: 10px;
+  -webkit-appearance: none;
+  width: 35%;
+  height: 5px;
+  border-radius: 5px;
+  outline: none;
+  pointer-events: none;
+  background: linear-gradient(to right,#f4cdff 50%, #ce4ff2 50%);
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 10px;
+    height: 10px;
+    background-color: #ce4ff2;
+    border: none;
+  }
+}
+
+.text-6{
+  font-size: 15px;
+  color: #444444;
+  font-weight: 700;
+}
+
+.text-7{
+  font-size: 28px;
+  text-transform: uppercase;
+  color: #444444;
+  font-weight: 800;
+  margin-left: 18px;
+}
+
+.it{
+  font-size: 24px;
+  color: #ce4ff2;
+}
+
+.it-2{
+  font-size: 20px;
+  color: #ce4ff2;
+}
+
+.about-me {
+  display: flex;
+  max-width: 100%;
+  text-align: center;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+
+.about-me .header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ce4ff2;
+  color: white;
+  height: 45px;
+  border-radius: 50px;
+  font-weight: 800;
+  font-size: 24px;
+  gap: 10px;
+  margin-bottom: 15px;
+  width: 230px;
+}
+
+.lg{
+  color: #444444;
+  font-weight: 400;
+  text-align: right;
+  margin-left: -420px;
+  margin-top: -30px;
+}
+
+.text-8 {
+  margin-top: 30px;
+  font-size: 18px;
+  color: #444444;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.education-wrapper {
+  width: 450px;       /* ширина блоку (можеш змінити) */
+  margin-left: auto;  /* штовхає весь блок вправо */
+}
+
+.section-title {
+  text-align: right;
+  font-size: 36px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.timeline {
+  width: 100%;
+}
+
+.edu-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.edu-left {
+  width: 70%;
+  text-align: right; /* вирівнює весь текст по правому краю */
+}
+
+.edu-left h3 {
+  color: #c260ff;
+  margin: 0;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.edu-left .years {
+  color: #c260ff;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.edu-left .uni {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.edu-left p {
+  margin: 0;
+  color: #555;
+  line-height: 1.4;
+}
+
+.edu-right {
+  width: 30%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.circle-line {
+  text-align: center;
+}
+
+.circle {
+  width: 14px;
+  height: 14px;
+  border: 3px solid #c260ff;
+  border-radius: 50%;
+  margin: 0 auto;
+}

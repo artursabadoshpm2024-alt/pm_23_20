@@ -1,0 +1,153 @@
+.cut-circle{
+  width: 100%;
+  height: 300px;
+
+  overflow: hidden;
+  position: relative;
+}
+
+
+.circle {
+  width: 350px;
+  height: 320px;
+  position: absolute;
+  background-color: #f1f1f1;
+  border-top-left-radius: 200%;
+  border-top-right-radius: 200%;
+  border-bottom-left-radius: 0%;
+  border-bottom-right-radius: 0%;
+  z-index: 2;
+  left: -70px;
+  bottom: -150px;
+}
+
+.circle-2 {
+  width: 350px;
+  height: 320px;
+  position: absolute;
+  background-color: #e6e6e6;
+  border-top-left-radius: 200%;
+  border-top-right-radius: 200%;
+  border-bottom-left-radius: 0%;
+  border-bottom-right-radius: 0%;
+  z-index: 1;
+  left: -220px;
+  bottom: -70px;
+}
+
+.cut-circle-right {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+}
+
+.circle-right {
+  width: 350px;
+  height: 320px;
+  position: absolute;
+  background-color: #f1f1f1;
+  border-top-left-radius: 200%;
+  border-top-right-radius: 200%;
+  border-bottom-left-radius: 0%;
+  border-bottom-right-radius: 0%;
+  z-index: 2;
+  right: -60px;
+  bottom: -130px;
+}
+
+.circle-right-2 {
+  width: 350px;
+  height: 320px;
+  position: absolute;
+  background-color: #e6e6e6;
+  border-top-left-radius: 200%;
+  border-top-right-radius: 200%;
+  border-bottom-left-radius: 0%;
+  border-bottom-right-radius: 0%;
+  z-index: 1;
+  right: -210px;
+  bottom: -50px;
+}
+
+.center-oval {
+  position: absolute;
+  top: 43%;
+  left: 49%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 170px;
+  background-color: #444444;
+  border-radius: 100px;
+}
+
+.left{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.right {
+  display: flex;
+  gap: 15px;
+}
+
+.text-1{
+  font-size: 36px;
+  text-transform: uppercase;
+  color: #ce4ff2;
+  font-weight: 700;
+  padding-right: 15px;
+}
+
+.text-2{
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-weight: 500;
+  text-align: right;
+  line-height: 25px;
+}
+
+.ll{
+  display: flex;
+  gap: 20px;
+  padding-right: 15px;
+}
+
+.i {
+  margin-top: 9px;
+  width: 6px;
+  height: 6px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.v-line{
+  margin-top: 35px;
+  width: 2px;
+  height: 113px;
+  background-color: white;
+}
+
+.text-3{
+  padding-top: 3px;
+  font-size: 30px;
+  text-transform: uppercase;
+  color: #ce4ff2;
+  font-weight: 700;
+}
+
+.text-4{
+  padding-top: 6px;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.text-5{
+  font-size: 12px;
+  color: #ffffff;
+  font-weight: 600;
+}
