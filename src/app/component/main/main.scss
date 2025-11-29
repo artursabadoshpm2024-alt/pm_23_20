@@ -1,15 +1,12 @@
-// Змінні
 $purple: #ce4ff2;
 $gray-dark: #444444;
 $gray-mid: #54548a;
 
-// Відступи
 .pad {
   padding-left: 110px;
   padding-right: 110px;
 }
 
-// Timeline
 .timeline-item,
 .timeline-item-2 {
   display: flex;
@@ -178,15 +175,15 @@ p {
   border-radius: 5px;
   outline: none;
   pointer-events: none;
-  background: linear-gradient(to right,#f4cdff 50%, $purple 50%);
+  background: linear-gradient(to right, #f4cdff 0%, #ce4ff2 0%);
+}
 
-  &::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    width: 10px;
-    height: 10px;
-    background-color: $purple;
-    border: none;
-  }
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 10px;
+  height: 10px;
+  background-color: #ce4ff2;
+  border: none;
 }
 
 .text-6 {

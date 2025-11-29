@@ -1,11 +1,9 @@
-// Змінні
 $color-light: #f1f1f1;
 $color-light-2: #e6e6e6;
 $color-dark: #444;
 $color-purple: #ce4ff2;
 $color-white: #fff;
 
-// Міксін для кола
 @mixin circle-shape($bg-color, $z, $pos-left: null, $pos-right: null, $bottom: null) {
   width: 350px;
   height: 320px;
@@ -27,7 +25,6 @@ $color-white: #fff;
   }
 }
 
-// Базові стилі
 * {
   box-sizing: border-box;
 }
@@ -41,7 +38,6 @@ $color-white: #fff;
   margin-left: 6px;
 }
 
-// Колеса
 .circle {
   @include circle-shape($color-light, 2, -70px, null, -150px);
 }

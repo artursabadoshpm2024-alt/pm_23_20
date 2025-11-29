@@ -1,4 +1,3 @@
-// Змінні
 $white: #ffffff;
 $purple: #ce4ff2;
 $gray-dark: #444444;
@@ -6,7 +5,6 @@ $gray-light: #d2d2d2;
 $gray-mid: #54548a;
 $black: #000000;
 
-// Міксін для фото-маски
 @mixin photo-mask($width, $bg-color, $z, $mt, $ml, $border: null) {
   width: $width;
   aspect-ratio: 1/1;
