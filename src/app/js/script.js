@@ -1,69 +1,77 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const container = document.getElementById('name-container');
+    fetch('json/data.json')
+        .then(response => response.json())
+        .then(data => {
+            const container = document.getElementById('name-container');
+            const div = document.createElement('div');
+            div.classList.add('text-9');
+            div.textContent = data.name.first || '';
 
-    const div = document.createElement('div');
-    div.classList.add('text-9');
-    div.textContent = 'THOMAS';
+            const span = document.createElement('span');
+            span.classList.add('text-10');
+            span.textContent = data.name.last || '';
 
-    const span = document.createElement('span');
-    span.classList.add('text-10');
-    span.textContent = 'SMITH';
+            div.appendChild(span);
+            container.appendChild(div);
 
-    div.appendChild(span);
+            const skillsContainer = document.getElementById('skills-container');
+            if (data.skills && Array.isArray(data.skills)) {
+                data.skills.forEach(skill => {
+                    const skillItem = document.createElement('div');
+                    skillItem.classList.add('skill-item');
 
-    container.appendChild(div);
+                    const leftDiv = document.createElement('div');
+                    leftDiv.classList.add('left-3');
 
-    const skillsContainer = document.getElementById('skills-container');
+                    const dot = document.createElement('div');
+                    dot.classList.add('dot');
 
-    const skills = [
-        { name: 'Microsoft Word', value: 70 },
-        { name: 'Adobe Illustrator', value: 60 },
-        { name: 'Microsoft PowerPoint', value: 80 },
-        { name: 'Adobe Photoshop', value: 90 }
-    ];
+                    const label = document.createElement('label');
+                    label.classList.add('text-6');
+                    label.textContent = skill.name;
 
-    skills.forEach(skill => {
-        const skillItem = document.createElement('div');
-        skillItem.classList.add('skill-item');
+                    leftDiv.appendChild(dot);
+                    leftDiv.appendChild(label);
+                    skillItem.appendChild(leftDiv);
 
-        const leftDiv = document.createElement('div');
-        leftDiv.classList.add('left-3');
+                    const input = document.createElement('input');
+                    input.type = 'range';
+                    input.classList.add('slider');
+                    input.value = skill.value;
+                    input.disabled = true;
 
-        const dot = document.createElement('div');
-        dot.classList.add('dot');
+                    const percentage = skill.value;
+                    input.style.background = `linear-gradient(to right, #f4cdff ${percentage}%, #ce4ff2 ${percentage}%)`;
 
-        const label = document.createElement('label');
-        label.classList.add('text-6');
-        label.textContent = skill.name;
+                    skillItem.appendChild(input);
+                    skillsContainer.appendChild(skillItem);
+                });
+            }
 
-        leftDiv.appendChild(dot);
-        leftDiv.appendChild(label);
-        skillItem.appendChild(leftDiv);
-
-        const input = document.createElement('input');
-        input.type = 'range';
-        input.classList.add('slider');
-        input.value = skill.value;
-        input.disabled = true;
-
-        const percentage = skill.value;
-        input.style.background = `linear-gradient(to right, #f4cdff ${percentage}%, #ce4ff2 ${percentage}%)`;
-
-        skillItem.appendChild(input);
-        skillsContainer.appendChild(skillItem);
-    });
+            // About Me
+            const content = document.querySelector('.lg');
+            if (data.aboutMe && Array.isArray(data.aboutMe)) {
+                data.aboutMe.forEach(text => {
+                    const p = document.createElement('p');
+                    p.classList.add('text-8');
+                    p.innerHTML = text.replace(/\n/g, '<br>');
+                    content.appendChild(p);
+                });
+            }
+        })
+        .catch(err => console.error('Error loading JSON:', err));
 
     const header = document.querySelector('.about-me .header');
-    const content = document.querySelector('.lg');
+    const contentDiv = document.querySelector('.lg');
     const arrow = header.querySelector('.arrow');
 
     header.addEventListener('click', function() {
-        if (content.style.display === 'none' || content.style.display === '') {
-            content.style.display = 'block';
-            arrow.style.transform = 'rotate(0deg)';
+        if (contentDiv.style.display === 'none' || contentDiv.style.display === '') {
+            contentDiv.style.display = 'block';
+            if (arrow) arrow.style.transform = 'rotate(0deg)';
         } else {
-            content.style.display = 'none';
-            arrow.style.transform = 'rotate(270deg)';
+            contentDiv.style.display = 'none';
+            if (arrow) arrow.style.transform = 'rotate(270deg)';
         }
     });
 });

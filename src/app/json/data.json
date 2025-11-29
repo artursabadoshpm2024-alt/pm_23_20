@@ -1,0 +1,12 @@
+{
+  "name": {
+    "first": "THOMAS",
+    "last": "SMITH"
+  },
+  "skills": [
+    { "name": "Microsoft Word", "value": 70 },
+    { "name": "Adobe Illustrator", "value": 60 },
+    { "name": "Microsoft PowerPoint", "value": 80 },
+    { "name": "Adobe Photoshop", "value": 90 }
+  ]
+}
