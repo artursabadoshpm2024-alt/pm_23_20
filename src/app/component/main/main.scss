@@ -1,9 +1,17 @@
-.pad{
+// Змінні
+$purple: #ce4ff2;
+$gray-dark: #444444;
+$gray-mid: #54548a;
+
+// Відступи
+.pad {
   padding-left: 110px;
   padding-right: 110px;
 }
 
-.timeline-item {
+// Timeline
+.timeline-item,
+.timeline-item-2 {
   display: flex;
   align-items: flex-start;
   gap: 30px;
@@ -12,11 +20,6 @@
 }
 
 .timeline-item-2 {
-  display: flex;
-  align-items: flex-start;
-  gap: 30px;
-  font-family: Arial, sans-serif;
-  margin-bottom: 30px;
   margin-top: -60px;
 }
 
@@ -26,26 +29,71 @@
   align-items: center;
 }
 
-.circle-3 {
+.circle-3,
+.circle-6,
+.circle-7,
+.circle-8 {
   width: 12px;
   height: 12px;
-  border: 2px solid #ce4ff2;
+  border: 2px solid $purple;
   border-radius: 50%;
+}
+
+.circle-3 {
   margin-top: 7px;
+}
+
+.circle-6 {
+  margin-top: 33px;
+}
+
+.circle-7 {
+  margin-top: 15px;
+}
+
+.circle-8 {
+  margin-top: 13px;
+}
+
+.line,
+.line-2,
+.line-3,
+.line-4,
+.line-5 {
+  background: $gray-mid;
 }
 
 .line {
   width: 1px;
   height: 100px;
-  background: #54548a;
   margin-top: 10px;
 }
 
 .line-2 {
   width: 1px;
   height: 88px;
-  background: #54548a;
   margin-top: 10px;
+}
+
+.line-3 {
+  width: 1px;
+  height: 115px;
+  margin-top: 55px;
+  margin-left: -7px;
+}
+
+.line-4 {
+  width: 1px;
+  height: 115px;
+  margin-top: 35px;
+  margin-left: -7px;
+}
+
+.line-5 {
+  width: 1px;
+  height: 70px;
+  margin-top: 35px;
+  margin-left: -7px;
 }
 
 .content {
@@ -61,24 +109,26 @@
 .position {
   font-size: 22px;
   text-transform: uppercase;
-  color: #ce4ff2;
+  color: $purple;
   font-weight: 700;
 }
 
-.date {
+.date,
+.date-2 {
   font-weight: 600;
   color: #C64BFF;
+}
+
+.date {
   padding-left: 135px;
 }
 
 .date-2 {
-  font-weight: 600;
-  color: #C64BFF;
   padding-left: 170px;
 }
 
 .company {
-  color: #444;
+  color: $gray-dark;
   font-weight: 600;
   margin-top: -10px;
   font-size: 15px;
@@ -89,7 +139,7 @@ p {
   height: 92px;
   font-size: 18px;
   line-height: 20px;
-  color: #444444;
+  color: $gray-dark;
   font-weight: 400;
   margin-top: 15px;
 }
@@ -128,39 +178,39 @@ p {
   border-radius: 5px;
   outline: none;
   pointer-events: none;
-  background: linear-gradient(to right,#f4cdff 50%, #ce4ff2 50%);
+  background: linear-gradient(to right,#f4cdff 50%, $purple 50%);
 
   &::-webkit-slider-thumb {
     -webkit-appearance: none;
     width: 10px;
     height: 10px;
-    background-color: #ce4ff2;
+    background-color: $purple;
     border: none;
   }
 }
 
-.text-6{
+.text-6 {
   font-size: 15px;
-  color: #444444;
+  color: $gray-dark;
   font-weight: 700;
 }
 
-.text-7{
+.text-7 {
   font-size: 28px;
   text-transform: uppercase;
-  color: #444444;
+  color: $gray-dark;
   font-weight: 800;
   margin-left: 18px;
 }
 
-.it{
+.it {
   font-size: 24px;
-  color: #ce4ff2;
+  color: $purple;
 }
 
-.it-2{
+.it-2 {
   font-size: 20px;
-  color: #ce4ff2;
+  color: $purple;
 }
 
 .about-me {
@@ -169,25 +219,25 @@ p {
   text-align: center;
   justify-content: flex-end;
   margin-top: 8px;
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $purple;
+    color: white;
+    height: 45px;
+    border-radius: 50px;
+    font-weight: 800;
+    font-size: 24px;
+    gap: 10px;
+    margin-bottom: 15px;
+    width: 230px;
+  }
 }
 
-.about-me .header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #ce4ff2;
-  color: white;
-  height: 45px;
-  border-radius: 50px;
-  font-weight: 800;
-  font-size: 24px;
-  gap: 10px;
-  margin-bottom: 15px;
-  width: 230px;
-}
-
-.lg{
-  color: #444444;
+.lg {
+  color: $gray-dark;
   font-weight: 400;
   text-align: right;
   margin-left: -420px;
@@ -197,70 +247,82 @@ p {
 .text-8 {
   margin-top: 30px;
   font-size: 18px;
-  color: #444444;
+  color: $gray-dark;
   font-weight: 400;
   line-height: 1.4;
 }
 
 .education-wrapper {
-  width: 450px;       /* ширина блоку (можеш змінити) */
-  margin-left: auto;  /* штовхає весь блок вправо */
+  width: 450px;
+  margin-left: auto;
 }
 
-.section-title {
+.text-18 {
+  font-size: 28px;
+  text-transform: uppercase;
+  color: $gray-dark;
+  font-weight: 800;
+}
+
+.fa-graduation-cap {
+  color: $purple;
+  margin-top: 8px;
+}
+
+.pda {
+  font-size: 28px;
   text-align: right;
-  font-size: 36px;
-  font-weight: 800;
-  margin-bottom: 20px;
-}
-
-.timeline {
-  width: 100%;
-}
-
-.edu-item {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 50px;
-  position: relative;
-}
-
-.edu-left {
-  width: 70%;
-  text-align: right; /* вирівнює весь текст по правому краю */
-}
-
-.edu-left h3 {
-  color: #c260ff;
-  margin: 0;
-  font-size: 20px;
-  font-weight: 800;
-}
-
-.edu-left .years {
-  color: #c260ff;
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-.edu-left .uni {
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-.edu-left p {
-  margin: 0;
-  color: #555;
-  line-height: 1.4;
-}
-
-.edu-right {
-  width: 30%;
   display: flex;
   justify-content: flex-end;
+  gap: 20px;
 }
 
-.circle-line {
-  text-align: center;
+.text-21 {
+  font-size: 20px;
+  text-transform: uppercase;
+  color: $purple;
+  font-weight: 900;
 }
 
+.text-19 {
+  font-size: 14px;
+  color: $purple;
+  font-weight: 700;
+}
+
+.text-20 {
+  font-size: 15px;
+  text-transform: uppercase;
+  color: $gray-dark;
+  font-weight: 600;
+}
+
+.text-22 {
+  padding-top: 15px;
+  font-size: 17px;
+  line-height: 17px;
+  color: $gray-dark;
+  font-weight: 400;
+}
+
+.pp,
+.pp-2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 87%;
+}
+
+.pp {
+  margin-left: 50px;
+}
+
+.pp-2 {
+  margin-left: 52px;
+}
+
+.kk {
+  display: flex;
+  justify-content: center;
+  margin-left: 15px;
+}

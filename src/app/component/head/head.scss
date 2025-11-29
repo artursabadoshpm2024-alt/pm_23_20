@@ -1,7 +1,16 @@
-.photo-mask {
-  width: 390px;
+// Змінні
+$white: #ffffff;
+$purple: #ce4ff2;
+$gray-dark: #444444;
+$gray-light: #d2d2d2;
+$gray-mid: #54548a;
+$black: #000000;
+
+// Міксін для фото-маски
+@mixin photo-mask($width, $bg-color, $z, $mt, $ml, $border: null) {
+  width: $width;
   aspect-ratio: 1/1;
-  background: white;
+  background: $bg-color;
   padding: 9px;
   border-radius: 220px 220px 220px 0;
   overflow: hidden;
@@ -9,11 +18,17 @@
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  z-index: 2;
+  z-index: $z;
   position: relative;
-  margin-top: 50px;
-  margin-left: 580px;
-  border: 8px solid white;
+  margin-top: $mt;
+  margin-left: $ml;
+  @if $border != null {
+    border: $border;
+  }
+}
+
+.photo-mask {
+  @include photo-mask(390px, $white, 2, 50px, 580px, 8px solid $white);
 
   img {
     width: 401px;
@@ -21,188 +36,154 @@
     object-fit: cover;
     border-radius: 110px 110px 110px 0;
     z-index: 2;
-
   }
 }
 
-.photo-mask-2{
-  width: 370px;
-  aspect-ratio: 1/1;
-  background-color: #ce4ff2;
-  padding: 9px;
-  border-radius: 220px 220px 220px 0;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-  z-index: 1;
-  position: relative;
-  margin-top: -385px;
-  margin-left: 608px;
+.photo-mask-2 {
+  @include photo-mask(370px, $purple, 1, -385px, 608px);
 }
 
-.photo-mask-3{
-  width: 350px;
-  aspect-ratio: 1/1;
-  background-color: #d2d2d2;
-  padding: 9px;
-  border-radius: 220px 220px 220px 0;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-  z-index: 1;
-  position: relative;
-  margin-top: -328px;
-  margin-left: 588px;
+.photo-mask-3 {
+  @include photo-mask(350px, $gray-light, 1, -328px, 588px);
 }
 
-.name-bg{
+.name-bg {
   width: 600px;
   height: 80px;
-  background-color: #444444;
-  border: 1px solid #000000;
+  background-color: $gray-dark;
+  border: 1px solid $black;
   border-radius: 50px;
   margin-left: 130px;
   margin-top: -360px;
 }
 
-.text-9{
+.text-9 {
   font-size: 55px;
   text-transform: uppercase;
-  color: #ffffff;
+  color: $white;
   font-weight: 800;
   text-align: left;
   margin-left: 40px;
   margin-top: -7px;
 }
 
-.text-10{
+.text-10 {
   font-weight: 300;
   padding-left: 20px;
 }
 
-.text-11{
+.text-11 {
   font-size: 26px;
   letter-spacing: 4px;
   text-transform: uppercase;
-  color: #444444;
+  color: $gray-dark;
   font-weight: 400;
   margin-left: 180px;
 }
 
-.contact{
+.contact {
   width: 250px;
   height: 30px;
   border-radius: 33px;
-  background-color: #ce4ff2;
+  background-color: $purple;
   margin-left: 380px;
   margin-top: 30px;
   text-align: center;
 }
 
-.text-12{
+.text-12 {
   font-size: 16px;
   text-transform: uppercase;
-  color: #ffffff;
+  color: $white;
   font-weight: 900;
   margin-left: 8px;
   padding-top: 30px;
 }
 
-
-.fa-phone{
+.fa-phone {
   margin-left: -45px;
-  color: white;
+  color: $white;
   font-size: 14px;
   padding-top: 8px;
 }
 
-.circle-4{
+.circle-4,
+.circle-5 {
   width: 12px;
   height: 12px;
-  border: 3px solid #ce4ff2;
+  border: 3px solid $purple;
   border-radius: 50%;
   margin-top: -18px;
   margin-left: 560px;
+}
+
+.circle-4 {
   margin-bottom: 10px;
 }
 
-.circle-5{
-  width: 12px;
-  height: 12px;
-  border: 3px solid #ce4ff2;
-  border-radius: 50%;
-  margin-top: -18px;
-  margin-left: 560px;
-
+.v-line-2 {
+  width: 1.8px;
+  height: 135px;
+  background-color: $gray-mid;
+  border-radius: 3px;
+  margin-left: 540px;
 }
 
-.text-13{
+.text-13 {
   font-size: 17px;
-  color: #444444;
+  color: $gray-dark;
   font-weight: 500;
   margin-left: 396px;
   line-height: 10px;
   padding-bottom: 20px;
 }
 
-.text-14{
+.text-14 {
   font-size: 17px;
-  color: #444444;
+  color: $gray-dark;
   font-weight: 500;
   margin-left: 352px;
   margin-top: -40px;
   line-height: 10px;
 }
 
-.text-15{
+.text-15 {
   font-size: 17px;
-  color: #444444;
+  color: $gray-dark;
   font-weight: 500;
   margin-left: 366px;
   line-height: 10px;
   padding-bottom: 20px;
 }
 
-.text-16{
+.text-16 {
   font-size: 17px;
-  color: #444444;
+  color: $gray-dark;
   font-weight: 500;
   margin-left: 385px;
   line-height: 10px;
   padding-bottom: 20px;
 }
 
-.text-17{
+.text-17 {
   font-size: 17px;
-  color: #444444;
+  color: $gray-dark;
   font-weight: 500;
   margin-left: 393px;
   margin-top: -40px;
   line-height: 10px;
 }
 
-.v-line-2{
-  width: 1.8px;
-  height: 135px;
-  background-color: #54548a;
-  border-radius: 3px;
-  margin-left: 540px;
-}
-
-.tx{
+.tx {
   margin-top: -135px;
 }
 
-.tx-2{
+.tx-2 {
   margin-top: 20px;
   line-height: 15px;
 }
 
-.tx-3{
+.tx-3 {
   margin-top: 30px;
-  line-height: 15px;
+  line-height: 20px;
 }

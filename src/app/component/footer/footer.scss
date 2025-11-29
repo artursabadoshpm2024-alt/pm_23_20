@@ -1,3 +1,33 @@
+// Змінні
+$color-light: #f1f1f1;
+$color-light-2: #e6e6e6;
+$color-dark: #444;
+$color-purple: #ce4ff2;
+$color-white: #fff;
+
+// Міксін для кола
+@mixin circle-shape($bg-color, $z, $pos-left: null, $pos-right: null, $bottom: null) {
+  width: 350px;
+  height: 320px;
+  position: absolute;
+  background-color: $bg-color;
+  border-top-left-radius: 200%;
+  border-top-right-radius: 200%;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  z-index: $z;
+  @if $pos-left != null {
+    left: $pos-left;
+  }
+  @if $pos-right != null {
+    right: $pos-right;
+  }
+  @if $bottom != null {
+    bottom: $bottom;
+  }
+}
+
+// Базові стилі
 * {
   box-sizing: border-box;
 }
@@ -11,46 +41,21 @@
   margin-left: 6px;
 }
 
-.circle,
-.circle-2,
-.circle-right,
-.circle-right-2 {
-  width: 350px;
-  height: 320px;
-  position: absolute;
-  background-color: #f1f1f1;
-  border-top-left-radius: 200%;
-  border-top-right-radius: 200%;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-}
-
+// Колеса
 .circle {
-  background-color: #f1f1f1;
-  z-index: 2;
-  left: -70px;
-  bottom: -150px;
+  @include circle-shape($color-light, 2, -70px, null, -150px);
 }
 
 .circle-2 {
-  background-color: #e6e6e6;
-  z-index: 1;
-  left: -220px;
-  bottom: -70px;
+  @include circle-shape($color-light-2, 1, -220px, null, -70px);
 }
 
 .circle-right {
-  background-color: #f1f1f1;
-  z-index: 2;
-  right: -60px;
-  bottom: -130px;
+  @include circle-shape($color-light, 2, null, -60px, -130px);
 }
 
 .circle-right-2 {
-  background-color: #e6e6e6;
-  z-index: 1;
-  right: -220px;
-  bottom: -50px;
+  @include circle-shape($color-light-2, 1, null, -220px, -50px);
 }
 
 .center-oval {
@@ -60,11 +65,10 @@
   transform: translate(-50%, -50%);
   width: 600px;
   height: 170px;
-  background-color: #444;
+  background-color: $color-dark;
   border-radius: 100px;
 }
 
-/* Тексти та блоки */
 .left {
   display: flex;
   flex-direction: column;
@@ -79,7 +83,7 @@
 .text-1 {
   font-size: 36px;
   text-transform: uppercase;
-  color: #ce4ff2;
+  color: $color-purple;
   font-weight: 700;
   padding-right: 15px;
 }
@@ -87,7 +91,7 @@
 .text-2 {
   font-size: 16px;
   text-transform: uppercase;
-  color: #fff;
+  color: $color-white;
   font-weight: 500;
   text-align: right;
   line-height: 25px;
@@ -103,7 +107,7 @@
   margin-top: 9px;
   width: 6px;
   height: 6px;
-  background-color: #fff;
+  background-color: $color-white;
   border-radius: 50%;
 }
 
@@ -111,14 +115,14 @@
   margin-top: 35px;
   width: 2px;
   height: 113px;
-  background-color: #fff;
+  background-color: $color-white;
 }
 
 .text-3 {
   padding-top: 3px;
   font-size: 30px;
   text-transform: uppercase;
-  color: #ce4ff2;
+  color: $color-purple;
   font-weight: 700;
 }
 
@@ -126,12 +130,12 @@
   padding-top: 6px;
   font-size: 18px;
   text-transform: uppercase;
-  color: #fff;
+  color: $color-white;
   font-weight: 600;
 }
 
 .text-5 {
   font-size: 12px;
-  color: #fff;
+  color: $color-white;
   font-weight: 600;
 }
